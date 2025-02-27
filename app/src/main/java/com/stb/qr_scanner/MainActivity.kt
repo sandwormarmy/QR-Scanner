@@ -12,6 +12,7 @@ import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
 
+    //activity_main.xml
     private lateinit var binding: ActivityMainBinding
     private var qrScanIntegrator: IntentIntegrator? = null
 
@@ -32,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setOnClickListener() {
         binding.btnScan.setOnClickListener { performAction() }
-
         binding.showQRScanner.setOnClickListener {
             // Add code to show QR Scanner Code in Fragment.
         }
