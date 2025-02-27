@@ -7,6 +7,10 @@ android {
     namespace = "com.stb.qr_scanner"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.stb.qr_scanner"
         minSdk = 24
@@ -43,15 +47,26 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.barcode.scanning.common)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.camera.view)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    //QR CODE
-    implementation ("com.google.zxing:zxing-parent:3.5.3")
-    implementation ("com.google.zxing:core:3.4.1")
+    //QR
+    //implementation(libs.barcode.scanning)
+    //implementation(libs.androidx.xx)
+    implementation ("com.journeyapps:zxing-android-embedded:4.2.0")
+    implementation ("androidx.appcompat:appcompat:1.3.1")
 
-    //FIREbase
-  //  implementation ("com.google.firebase:firebase-database-ktx:20.0.4")
-    //implementation ("com.google.firebase:firebase-auth-ktx")
+
+
+
+    //QR CODE
+    //implementation ("com.google.zxing:zxing-parent:3.5.3")
+    //implementation ("com.google.zxing:core:3.4.1")
+
+
 }
