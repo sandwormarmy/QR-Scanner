@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="background_color">#333333</color>
+    <color name="background_color_secondary">#555555</color>
+
+
+    <color name="primary_color">#fb2e01</color>
+    <color name="secondary_color">#6fcb9f</color>
+    <color name="dritteFarbeDIGGA">#ffe28a</color>
 </resources>
