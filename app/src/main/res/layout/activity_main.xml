@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/primary_color"
-                android:text="Open Website"
+                android:text="@string/open_website"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
@@ -89,10 +89,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/primary_color"
-                android:text="Copy Link Address"
+                android:text="@string/copy_link_address"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
 
+            <!-- Start new Scann Button -->
+            <Button
+                android:id="@+id/newScan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/primary_color"
+                android:text="@string/new_scan"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

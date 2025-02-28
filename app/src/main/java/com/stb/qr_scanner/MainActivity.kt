@@ -9,7 +9,6 @@ import com.stb.qr_scanner.databinding.ActivityMainBinding
 import android.content.Intent
 import android.net.Uri
 import android.text.util.Linkify
-import android.webkit.URLUtil
 import android.widget.Toast
 import com.google.zxing.integration.android.IntentIntegrator
 import org.json.JSONException
@@ -37,12 +36,13 @@ class MainActivity : AppCompatActivity() {
         qrScanIntegrator = IntentIntegrator(this)
         qrScanIntegrator?.setOrientationLocked(false)
         qrScanIntegrator?.setBeepEnabled(false)
+
     }
 
     private fun setOnCLickListener(){
         binding.buttonCopyLink.setOnClickListener{copyLinktoClipboard()}
         binding.buttonOpenWebsite.setOnClickListener{openURL()}
-        binding.buttonOpenWebsite.setOnClickListener{newScan()}
+        binding.newScan.setOnClickListener{newScan()}
     }
 
     /**
@@ -87,6 +87,8 @@ class MainActivity : AppCompatActivity() {
         qrScanIntegrator?.initiateScan()
     }
 
+
+    @Deprecated("This method has been deprecated in favor of using the Activity Result API\n      which brings increased type safety via an {@link ActivityResultContract} and the prebuilt\n      contracts for common intents available in\n      {@link androidx.activity.result.contract.ActivityResultContracts}, provides hooks for\n      testing, and allow receiving results in separate, testable classes independent from your\n      activity. Use\n      {@link #registerForActivityResult(ActivityResultContract, ActivityResultCallback)}\n      with the appropriate {@link ActivityResultContract} and handling the result in the\n      {@link ActivityResultCallback#onActivityResult(Object) callback}.")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
@@ -110,7 +112,7 @@ class MainActivity : AppCompatActivity() {
 
                 } catch (e: JSONException) {
                     //not in json format so just showing url
-                    binding.name.text = "Scanned Data:"
+                    binding.name.text = getString(R.string.scanned_data)
                     binding.siteName.text = result.contents
                 }
             }
